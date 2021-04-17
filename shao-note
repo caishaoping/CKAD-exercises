@@ -1,0 +1,19 @@
+1. To avoid issues, run the following command once before working through the steps of a question. The command sets the context and the namespace at the same time:
+$ kubectl config set-context <context-of-question> \  --namespace=<namespace-of-question>
+
+2. Using an Alias for kubectl
+$ alias k=kubectl
+$ k version
+
+3. Internalize Resource Short Names
+$ kubectl api-resources
+
+4. Delete objects right away
+$ kubectl delete pod nginx --grace-period=0 --force
+
+5. Find object info   -C 10 option to output 10 lines of context
+$ kubectl describe pods | grep -C 10 "author=John Doe"
+$ kubectl get pods -o yaml | grep -C 5 labels:
+
+6. Explore fields of kubectl resources
+$ kubectl explain pods.spec
